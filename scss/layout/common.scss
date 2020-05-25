@@ -116,7 +116,7 @@ body {
 
   .slick-prev:before {
     content: '';
-    background-image: url('../../images/arrow-left.png');
+    background-image: url('./../images/arrow-left.png');
     width: 24px;
     height: 33px;
     left: 45%;
@@ -124,7 +124,7 @@ body {
 
   .slick-next:before {
     content: '';
-    background-image: url('../../images/arrow-right.png');
+    background-image: url('./../images/arrow-right.png');
     width: 24px;
     height: 33px;
     left: 55%;
