@@ -1,0 +1,177 @@
+.footer {
+  background-color: $black;
+  color: #aaa;
+  padding-top: 30px;
+
+  @include media ('>=tablet') {
+    padding-top: 86px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0 15px;
+    line-height: 1.6;
+    margin: 0 -10px 30px;
+
+    @include media ('>=XS-phone') {
+      flex-direction: row;
+      margin-bottom: 74px;
+      justify-content: center;
+    }
+  }
+
+  .title {
+    font-size: 14px;
+    color: $white;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .block {
+
+    max-width: 230px;
+
+    @include media ('>=XS-phone') {
+      width: 50%;
+      min-width: calc(50% - 20px);
+      margin: 0 10px;
+    }
+
+    @include media ('>=tablet') {
+      width: 33.33%;
+      min-width: calc(33.33% - 20px);
+      margin: 0 10px;
+    }
+
+    @include media ('>=tablet') {
+      width: 20%;
+      min-width: calc(20% - 20px);
+      margin: 0 10px;
+    }
+
+    .text {
+      margin-bottom: 46px;
+    }
+  }
+
+  .posts,
+  .comments {
+    padding: 0;
+    margin-bottom: 20px;
+    margin-bottom: 0;
+
+    span {
+      color: $gray;
+    }
+  }
+
+  .cloud {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -2px 20px;
+
+    a {
+      padding: 9px;
+      background-color: #222;
+      margin: 2px;
+      color: #aaa;
+      transition: color .3s;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .form-group {
+    position: relative;
+    max-width: 230px;
+  }
+
+  .form-input {
+    height: 45px;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #e0e9f0;
+    font-size: 16px;
+    padding: 14px 36px 10px 10px;
+    outline: none;
+  }
+
+  .search-button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 3px;
+    bottom: 2px;
+    right: 2px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: $white;
+
+    .icon-search {
+      font-size: 22px;
+      color: #aaa;
+    }
+  }
+
+  .copyright {
+    display: flex;
+    flex-direction: column;
+    border-top: 5px solid #222;
+    padding: 41px 0 34px;
+
+    @include media ('>=tablet') {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    span {
+      text-transform: uppercase;
+      margin-bottom: 20px;
+
+      @include media ('>=tablet') {
+        margin: 0;
+      }
+    }
+
+    .social-networks {
+      display: flex;
+      padding: 0;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+
+    .icons {
+      color: #aaa;
+      margin: 10px;
+      transition: color .3s;
+
+      &:hover {
+        color: white;
+      }
+    }
+
+    .icon-rss {
+      margin-right: 0;
+    }
+  }
+}
+
+/*Эти стили нужны для того, чтобы убрать крестик на type input*/
+input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }

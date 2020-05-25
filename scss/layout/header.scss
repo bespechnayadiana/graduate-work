@@ -1,0 +1,133 @@
+.header {
+  background-color: $black;
+  padding: 30px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+
+  .holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .logo {
+    display: inline-block;
+    min-width: 175px;
+  }
+
+  .menu-opener {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: $white;
+    border-radius: 5px;
+    position: relative;
+
+    @include media ('>=desktop') {
+      display: none;
+    }
+
+    span,
+    &::after,
+    &::before {
+      content:'';
+      position: absolute;
+      border: 2px solid $black;
+      width: 21px;
+      height: 4px;
+      top: 50%;
+      left: 25%;
+      right: 25%;
+      margin-top: -2px;
+      transition: all .3s;
+    }
+
+    &::before {
+      top: 30%;
+    }
+
+    &::after {
+      top: 70%;
+    }
+  }
+
+  .menu {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 120%;
+    padding: 20px 10px 10px;
+    list-style: none;
+    visibility: hidden;
+    transform: scale(0.9);
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out, transform .3s ease-in-out;
+    background-color: rgba(0, 0, 0, .9);
+    z-index: 3;
+    flex-wrap: wrap;
+
+    @include media ('>=desktop') {
+      visibility: visible;
+      display: flex;
+      padding: 0;
+      background-color: transparent;
+      position: static;
+      margin: 0;
+      transform: none;
+
+      li {
+        list-style: none;
+        margin-left: 15px;
+      }
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: bold;
+      color: $gray;
+      transition: color .3s;
+      padding: 12px 10px;
+
+      @include media ('>=desktop') {
+        font-size: 13px;
+      }
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    .active a {
+      color: $white;
+    }
+  }
+}
+
+.mobile-menu-active .menu-opener {
+  span {
+    opacity: 0;
+  }
+
+  &::after, &::before {
+    transform: rotate(45deg);
+    top: 50%;
+    left: 23%;
+    right: 15%;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+.mobile-menu-active .menu {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
